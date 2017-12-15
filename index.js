@@ -7,7 +7,7 @@ var analyzer = _interopDefault(require('rollup-analyzer'));
 'use strict';
 
 var module$1 = (opts) => {
-  let log = (opts || {}).stdout ? console.log : console.error;
+  let log = (opts && opts.stdout) ? console.log : opts.stdout;
   return {
     name: 'rollup-analyzer-plugin',
     ongenerate: ({bundle}) => {
